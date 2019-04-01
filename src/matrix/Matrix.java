@@ -15,11 +15,7 @@ public class Matrix {
         this.matrix  = new int[rows][columns];
     }
 
-    public Matrix(int rows, int columns) throws MatrixException {
-
-        if(rows <= 0 || columns <= 0) {
-            throw new MatrixException("Incorrect matrix dimensions specified");
-        }
+    public Matrix(int rows, int columns) {
 
         this.rows    = rows;
         this.columns = columns;
@@ -33,12 +29,8 @@ public class Matrix {
     }
 
 
-    public static  Matrix multiply(Matrix matrix1, Matrix matrix2) throws MatrixException {
+    public static  Matrix multiply(Matrix matrix1, Matrix matrix2){
 
-        if(matrix1.columns != matrix2.rows) {
-            throw new MatrixException("Dimensions of the matrix do not match");
-        }
-        else {
             final Matrix result = new Matrix(matrix1.rows,matrix2.columns);
 
             for (int row = 0; row < matrix1.rows; ++row) {
@@ -51,10 +43,10 @@ public class Matrix {
             }
 
             return result;
-        }
+
     }
 
-    public static Matrix multiplyMatrixMT(Matrix matrix1, Matrix matrix2, int threadCount) throws MatrixException {
+    public static Matrix multiplyMatrixMT(Matrix matrix1, Matrix matrix2, int threadCount)  {
         assert threadCount > 0;
 
         final int rowCount = matrix1.rows;

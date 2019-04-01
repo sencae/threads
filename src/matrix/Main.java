@@ -10,7 +10,7 @@ public class Main {
     private final static int SECOND_MATRIX_ROWS = FIRST_MATRIX_COLS;
     private final static int SECOND_MATRIX_COLS = 1000;
 
-    public static void main(String[] args) throws MatrixException {
+    public static void main(String[] args){
 
         Matrix firstMatrix = new Matrix(FIRST_MATRIX_ROWS, FIRST_MATRIX_COLS);
         Matrix secondMatrix = new Matrix(SECOND_MATRIX_ROWS, SECOND_MATRIX_COLS);
